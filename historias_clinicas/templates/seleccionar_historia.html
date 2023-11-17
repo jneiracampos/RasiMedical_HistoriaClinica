@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Historia Clínica</title>
+</head>
+<body>
+    <h1>Seleccionar Historia Clínica</h1>
+
+    <ul>
+        {% for historia in historias_clinicas %}
+            <li><a href="{% url 'obtener_historia_clinica' historia.id %}">Historia Clínica {{ historia.id }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

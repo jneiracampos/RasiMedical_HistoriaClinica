@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import ver_historia_clinica
+from .views import obtener_historia_clinica
 
 urlpatterns = [
-    path('ver/<int:historia_id>/', ver_historia_clinica, name='ver_historia_clinica'),
+    path('obtener_historia_clinica/<int:historia_id>/<int:doctor_id>/', obtener_historia_clinica, name='obtener_historia_clinica'),
+    # Otras rutas URL
 ]

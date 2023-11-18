@@ -14,6 +14,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return redirect('seleccionar_historia')
+            #return redirect('obtener_historia_clinica', historia_id=1)
         else:
             return render(request, 'login.html', {'error': 'Credenciales incorrectas.'})
     return render(request, 'login.html')
@@ -23,7 +24,7 @@ def seleccionar_historia(request):
     historias_clinicas = HistoriaClinica.objects.filter(doctor=request.user.doctor)
     return render(request, 'seleccionar_historia.html', {'historias_clinicas': historias_clinicas})
 
-@login_required
+@login_required(login_url='/historias/login/')
 def obtener_historia_clinica(request, historia_id):
     historia_clinica = get_object_or_404(HistoriaClinica, pk=historia_id, doctor=request.user.doctor)
     data = {

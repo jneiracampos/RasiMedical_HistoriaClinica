@@ -75,14 +75,21 @@ WSGI_APPLICATION = 'RasiMedical.wsgi.application'
 
 # settings.py
 
+#DATABASES = {
+#   'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'rasimedical',
+#        'USER': 'rasimedicalUser',
+#        'PASSWORD': 'isis2503',
+#        'HOST': '10.77.240.3',
+#        'PORT': '5432',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rasimedical',
-        'USER': 'rasimedicalUser',
-        'PASSWORD': 'isis2503',
-        'HOST': '10.77.240.3',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
